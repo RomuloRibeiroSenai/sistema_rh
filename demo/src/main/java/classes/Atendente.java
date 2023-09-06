@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.Scanner;
+
 import enums.Unidade_Federal;
 import interfaces.Calculo;
 
@@ -11,8 +13,8 @@ public class Atendente extends Funcionario implements Calculo{
 
     @Override
     public double calcularSalario() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularSalario'");
+        System.out.println(this.salario);
+        return this.salario;
     }
 
     @Override
@@ -25,14 +27,22 @@ public class Atendente extends Funcionario implements Calculo{
 
     @Override
     public double calcular13(double salario) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcular13'");
+        System.out.println("A primeira parcela vai ser paga no dia 21/06 no valor de R$ " + (salario / 2));
+        System.out.println("A segunda parcela vai ser paga no dia 21/12 no valor de R$ " + (salario / 2));
+        return salario;
     }
 
     @Override
     public double calcularFerias(double salario) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularFerias'");
+        int meses;
+        double ferias, proporcional;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Quantos meses trabalhados no ano?");
+        meses = sc.nextInt();
+        proporcional = salario / 12;
+        ferias = proporcional * meses;
+        sc.close();
+        return ferias;
     }
 
     @Override
