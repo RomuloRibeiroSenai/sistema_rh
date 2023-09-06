@@ -16,9 +16,11 @@ public class Atendente extends Funcionario implements Calculo{
     }
 
     @Override
-    public double calcularFGTS() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularFGTS'");
+    public double calcularFGTS(double salario) {
+        double fgts;
+        fgts = salario * 0.08;
+        System.out.println("Seu valor mensal de FGTS é R$" + fgts);
+        return fgts;
     }
 
     @Override
@@ -31,5 +33,11 @@ public class Atendente extends Funcionario implements Calculo{
     public double calcularFerias() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'calcularFerias'");
+    }
+
+    @Override
+    public double calcularINSS() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'calcularINSS'");
     }
 }
