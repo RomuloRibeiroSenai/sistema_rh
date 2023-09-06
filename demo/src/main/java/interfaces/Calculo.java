@@ -3,6 +3,6 @@ package interfaces;
 public interface Calculo {
     double calcularSalario();
     double calcularFGTS();
-    double calcular13();
+    double calcular13(double salario);
     double calcularFerias(); 
 }

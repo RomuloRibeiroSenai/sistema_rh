@@ -1,11 +1,12 @@
 package classes;
 
+import enums.Unidade_Federal;
 import interfaces.Calculo;
 
 public class Atendente extends Funcionario implements Calculo{
     
-    public Atendente(String nome, String cpf, String cpts, double salario){
-        super(nome, cpf, cpts, salario);
+    public Atendente(String nome, String cpf, String cpts, double salario, Unidade_Federal UF){
+        super(nome, cpf, cpts, salario, UF);
     }
 
     @Override
@@ -21,7 +22,7 @@ public class Atendente extends Funcionario implements Calculo{
     }
 
     @Override
-    public double calcular13() {
+    public double calcular13(double salario) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'calcular13'");
     }
