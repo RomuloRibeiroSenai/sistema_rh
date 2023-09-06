@@ -5,5 +5,6 @@ public interface Calculo {
     double calcularFGTS(double salario);
     double calcular13(double salario);
     double calcularFerias(double salario);
-    double calcularINSS(double salario); 
+    double calcularINSS(double salario);
+    String vercargo(); 
 }

@@ -54,4 +54,10 @@ public class Supervisor extends Funcionario implements Calculo{
         return inss;
     }
 
+    @Override
+    public String vercargo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'vercargo'");
+    }
+
 }

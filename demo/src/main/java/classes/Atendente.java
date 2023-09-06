@@ -53,4 +53,10 @@ public class Atendente extends Funcionario implements Calculo{
         System.out.println("O valor descontado de INSS é de R$" + inss);
         return inss;
     }
+
+    @Override
+    public String vercargo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'vercargo'");
+    }
 }
