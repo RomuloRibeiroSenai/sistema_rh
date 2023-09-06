@@ -2,10 +2,10 @@ package classes;
 
 import enums.Unidade_Federal;
 
-public abstract class Funcionario {
-    protected String nome, cpf, cpts;
+public abstract class Funcionario extends Pessoa {
+    protected String cpts;
     protected double salario;
-    protected Unidade_Federal UF;
+
     public double getSalario() {
         return salario;
     }
@@ -39,8 +39,7 @@ public abstract class Funcionario {
     }
 
     public Funcionario (String nome, String cpf, String cpts, double salario, Unidade_Federal UF){
-        this.nome = nome;
-        this.cpf = cpf;
+        super(nome, cpf, cpts, UF);
         this.cpts = cpts;
         this.salario = salario;
         this.UF = UF;
