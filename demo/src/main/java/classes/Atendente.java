@@ -30,14 +30,17 @@ public class Atendente extends Funcionario implements Calculo{
     }
 
     @Override
-    public double calcularFerias() {
+    public double calcularFerias(double salario) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'calcularFerias'");
     }
 
     @Override
-    public double calcularINSS() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularINSS'");
+    public double calcularINSS(double salario) {
+        double inss;
+
+        inss = salario * 0.05;
+        System.out.println("O valor descontado de INSS é de R$" + inss);
+        return inss;
     }
 }
