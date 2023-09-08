@@ -59,4 +59,15 @@ public class Menu_Inicial {
 
         return lista_Funcionarios;
     }
+    public String ver_nome(ArrayList<Funcionario> lista_Funcionarios){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Qual o nome ? ");
+        String nome = sc.nextLine();
+        for (int i = 0; i < lista_Funcionarios.size(); i++){
+            if(nome.equalsIgnoreCase(lista_Funcionarios.get(i).getNome())){
+                return nome;
+            }
+        }
+        return "Não consta no cadastro";
+    }
 }

@@ -28,6 +28,22 @@ public class DemoApplication {
 		lista_Funcionarios.add(carioca);
 		Menu_Inicial menu = new Menu_Inicial();
 		escolha = menu.greet();
+		switch(escolha){
+			case 1:
+				menu.add_func(lista_Funcionarios);
+				break;
+			case 2:
+				String pessoa = menu.ver_nome(lista_Funcionarios);
+				for (int i = 0; i < lista_Funcionarios.size(); i ++){
+					if(pessoa.equalsIgnoreCase(lista_Funcionarios.get(i).getNome())){
+						double valor = lista_Funcionarios.get(i).getSalario();
+						System.out.println("O salário é R$"+ valor);
+						// eu posso ter um break aqui pra nao rodar o loop todo ?
+					}
+				}
+				break;
+			case 3:
+		}
 		
 	}
 
