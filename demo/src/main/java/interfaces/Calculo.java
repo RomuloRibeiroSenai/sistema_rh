@@ -6,5 +6,5 @@ public interface Calculo {
     double calcular13(double salario);
     double calcularFerias(double salario);
     double calcularINSS(double salario);
-    String vercargo(); 
+    
 }
