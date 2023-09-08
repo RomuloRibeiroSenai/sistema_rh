@@ -70,4 +70,20 @@ public class Menu_Inicial {
         }
         return "Não consta no cadastro";
     }
+    public String achar_cargo(ArrayList<Funcionario> lista_Funcionarios, String nome){
+        for (int i = 0; i < lista_Funcionarios.size(); i++){
+            Funcionario joe = lista_Funcionarios.get(i);
+
+            if (nome.equalsIgnoreCase(joe.getNome())){
+                if (joe instanceof Gerente){
+                    return "gerente";
+                } else if (joe instanceof Supervisor){
+                    return "supervisor";
+                } else if (joe instanceof Atendente){
+                    return "atendente";
+                }
+            }
+        }
+        return "not found";
+    }
 }
