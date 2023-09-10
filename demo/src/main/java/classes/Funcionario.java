@@ -1,8 +1,10 @@
 package classes;
 
+import java.io.Serializable;
+
 import enums.Unidade_Federal;
 
-public abstract class Funcionario extends Pessoa {
+public abstract class Funcionario extends Pessoa implements Serializable{
     protected String cpts;
     protected double salario;
 

@@ -1,5 +1,8 @@
 package sistema_rh.demo;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 
@@ -19,18 +22,23 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 		int escolha;
-		ArrayList<Funcionario> lista_Funcionarios = new ArrayList<>();
-		Gerente baiano = new Gerente("Albert", "9874563", "N", 10000, Unidade_Federal.BA);
-		Supervisor carioca = new Supervisor("Zelda", "121511", "115522", 5000, Unidade_Federal.RJ);
-		Atendente paulista = new Atendente("Beto", "1511515", "554411", 1500, Unidade_Federal.SP);
-		lista_Funcionarios.add(baiano);
-		lista_Funcionarios.add(paulista);
-		lista_Funcionarios.add(carioca);
+		ArrayList<Funcionario> lista_Funcionarios;
+		// Gerente baiano = new Gerente("Albert", "9874563", "N", 10000, Unidade_Federal.BA);
+		// Supervisor carioca = new Supervisor("Zelda", "121511", "115522", 5000, Unidade_Federal.RJ);
+		// Atendente paulista = new Atendente("Beto", "1511515", "554411", 1500, Unidade_Federal.SP);
+		// lista_Funcionarios.add(baiano);
+		// lista_Funcionarios.add(paulista);
+		// lista_Funcionarios.add(carioca);
+		try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("funcionarios.dat"))) {
+            lista_Funcionarios = (ArrayList<Funcionario>) inputStream.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            lista_Funcionarios = new ArrayList<>();
+        }
 		Menu_Inicial menu = new Menu_Inicial();
 		escolha = menu.greet();
 		switch(escolha){
 			case 1:
-				menu.add_func(lista_Funcionarios);
+				lista_Funcionarios = menu.add_func(lista_Funcionarios);
 				break;
 			case 2:
 				String pessoa = menu.ver_nome(lista_Funcionarios);
@@ -114,7 +122,9 @@ public class DemoApplication {
 					}
 				}			
 				break;
-			default:
+			case 7:
+				menu.ver_lista(lista_Funcionarios);
+				break;
 		}
 		
 	}
