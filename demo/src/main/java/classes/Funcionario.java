@@ -1,12 +1,19 @@
 package classes;
 
 import java.io.Serializable;
+import java.util.HashSet;
 
 import enums.Unidade_Federal;
 
 public abstract class Funcionario extends Pessoa implements Serializable{
     protected String cpts;
     protected double salario;
+    private static HashSet<Funcionario> lista_Funcionarios = new HashSet<Funcionario>();
+    public static Object getLista_Funcionarios;
+
+    public static HashSet<Funcionario> getLista_Funcionarios(){
+        return lista_Funcionarios;
+    }
 
     public double getSalario() {
         return salario;

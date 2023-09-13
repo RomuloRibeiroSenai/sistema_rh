@@ -63,11 +63,12 @@ public class Menu_Inicial {
                 System.out.println("Cargo inválido, Atendente, Gerente ou Supervisor por enquanto");
                 // caso que nunca chega se o while funcionar
         }
-        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("funcionarios.dat", true))) {
-            outputStream.writeObject(lista_Funcionarios.get(lista_Funcionarios.size() - 1));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        // try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("funcionarios.dat", true))) {
+        //     outputStream.writeObject(lista_Funcionarios.get(lista_Funcionarios.size() - 1));
+        //     System.out.println("foi");
+        // } catch (IOException e) {
+        //     e.printStackTrace();
+        // }
         
         return lista_Funcionarios;
     }
@@ -103,7 +104,7 @@ public class Menu_Inicial {
         System.out.println(lista_Funcionarios.size());
         for(int i = 0 ; i < lista_Funcionarios.size(); i++){
             cargo = achar_cargo(lista_Funcionarios, lista_Funcionarios.get(i).getNome()).toUpperCase();
-            System.out.println(lista_Funcionarios.get(i).getNome()+""+ cargo);
+            System.out.println(lista_Funcionarios.get(i).getNome()+" "+ cargo);
         }
         
     }

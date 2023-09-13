@@ -10,7 +10,7 @@ public class Supervisor extends Funcionario implements Calculo{
     public Supervisor(String nome, String cpf, String cpts, double salario, Unidade_Federal UF){
         super(nome, cpf, cpts, salario, UF);
     }
-
+    
     @Override
     public double calcularSalario() {
         System.out.println(this.salario);

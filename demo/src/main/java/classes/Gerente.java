@@ -1,11 +1,15 @@
 package classes;
 
+import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Scanner;
 
 import enums.Unidade_Federal;
 import interfaces.Calculo;
 
 public class Gerente extends Funcionario implements Calculo{
+    
+    private LocalDateTime data_contratacao = LocalDateTime.now();
     
     public Gerente(String nome, String cpf, String cpts, double salario, Unidade_Federal UF){
         super(nome, cpf, cpts, salario, UF);

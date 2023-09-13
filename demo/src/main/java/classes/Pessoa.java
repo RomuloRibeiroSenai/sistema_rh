@@ -1,10 +1,13 @@
 package classes;
 
+import java.time.LocalDateTime;
+
 import enums.Unidade_Federal;
 
 public abstract class Pessoa {
     protected String nome, cpf, dataNasc;
     protected Unidade_Federal UF;
+
 
     public String getNome() {
         return nome;
