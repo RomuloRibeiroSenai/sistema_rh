@@ -108,4 +108,97 @@ public class Menu_Inicial {
         }
         
     }
+
+    public void escolha(int escolha, ArrayList<Funcionario> lista_Funcionarios){
+        switch(escolha){
+			case 1:
+				lista_Funcionarios = this.add_func(lista_Funcionarios);
+				break;
+			case 2:
+				String pessoa = this.ver_nome(lista_Funcionarios);
+				for (int i = 0; i < lista_Funcionarios.size(); i ++){
+					if(pessoa.equalsIgnoreCase(lista_Funcionarios.get(i).getNome())){
+						double valor = lista_Funcionarios.get(i).getSalario();
+						System.out.println("O salário é R$"+ valor);
+						break;
+					}
+				}
+				break;
+			case 3:
+				String pessoa1 = this.ver_nome(lista_Funcionarios);
+				String cargo = this.achar_cargo(lista_Funcionarios, pessoa1);
+				for (int i = 0; i < lista_Funcionarios.size(); i ++){
+					if(pessoa1.equalsIgnoreCase(lista_Funcionarios.get(i).getNome())){
+						if (cargo.equals("gerente")){
+							Gerente gerente = (Gerente) lista_Funcionarios.get(i);
+							gerente.calcularFGTS(gerente.getSalario());						
+						} else if(cargo.equals("supervisor")){
+							Supervisor supervisor = (Supervisor) lista_Funcionarios.get(i);
+							supervisor.calcularFGTS(supervisor.getSalario());
+						} else if (cargo.equals("atendente")){
+							Atendente atendente = (Atendente)lista_Funcionarios.get(i);
+							atendente.calcularFGTS(atendente.getSalario());
+						}
+					}
+				}			
+				break;
+			case 4:
+				String pessoa2 = this.ver_nome(lista_Funcionarios);
+				String cargo1 = this.achar_cargo(lista_Funcionarios, pessoa2);
+				for (int i = 0; i < lista_Funcionarios.size(); i ++){
+					if(pessoa2.equalsIgnoreCase(lista_Funcionarios.get(i).getNome())){
+						if (cargo1.equals("gerente")){
+							Gerente gerente = (Gerente) lista_Funcionarios.get(i);
+							gerente.calcular13(gerente.getSalario());						
+						} else if(cargo1.equals("supervisor")){
+							Supervisor supervisor = (Supervisor) lista_Funcionarios.get(i);
+							supervisor.calcular13(supervisor.getSalario());
+						} else if (cargo1.equals("atendente")){
+							Atendente atendente = (Atendente)lista_Funcionarios.get(i);
+							atendente.calcular13(atendente.getSalario());
+						}
+					}
+				}			
+				break;
+			case 5:
+				String pessoa3 = this.ver_nome(lista_Funcionarios);
+				String cargo2 = this.achar_cargo(lista_Funcionarios, pessoa3);
+				for (int i = 0; i < lista_Funcionarios.size(); i ++){
+					if(pessoa3.equalsIgnoreCase(lista_Funcionarios.get(i).getNome())){
+						if (cargo2.equals("gerente")){
+							Gerente gerente = (Gerente) lista_Funcionarios.get(i);
+							gerente.calcularFerias(gerente.getSalario());						
+						} else if(cargo2.equals("supervisor")){
+							Supervisor supervisor = (Supervisor) lista_Funcionarios.get(i);
+							supervisor.calcularFerias(supervisor.getSalario());
+						} else if (cargo2.equals("atendente")){
+							Atendente atendente = (Atendente)lista_Funcionarios.get(i);
+							atendente.calcularFerias(atendente.getSalario());
+						}
+					}
+				}			
+				break;
+			case 6:
+				String pessoa4 = this.ver_nome(lista_Funcionarios);
+				String cargo3 = this.achar_cargo(lista_Funcionarios, pessoa4);
+				for (int i = 0; i < lista_Funcionarios.size(); i ++){
+					if(pessoa4.equalsIgnoreCase(lista_Funcionarios.get(i).getNome())){
+						if (cargo3.equals("gerente")){
+							Gerente gerente = (Gerente) lista_Funcionarios.get(i);
+							gerente.calcularINSS(gerente.getSalario());						
+						} else if(cargo3.equals("supervisor")){
+							Supervisor supervisor = (Supervisor) lista_Funcionarios.get(i);
+							supervisor.calcularINSS(supervisor.getSalario());
+						} else if (cargo3.equals("atendente")){
+							Atendente atendente = (Atendente)lista_Funcionarios.get(i);
+							atendente.calcularINSS(atendente.getSalario());
+						}
+					}
+				}			
+				break;
+			case 7:
+				this.ver_lista(lista_Funcionarios);
+				break;
+		}
+    }
 }
